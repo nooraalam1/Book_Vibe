@@ -23,7 +23,7 @@ const Nav = () => {
                         <NavLink
                             to="/listedbooks"
                             className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "active" : ""
+                                isPending ? "pending" : isActive ? "active" : "color:red"
                             }
                         >
                             <button className="btn btn-outline btn-accent">Listed Books</button>
