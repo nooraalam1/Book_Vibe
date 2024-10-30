@@ -1,4 +1,9 @@
+import { useLoaderData } from "react-router-dom";
+import Bookcard from "./Bookcard";
+
+
 const Home = () => {
+    const info = useLoaderData()
     return (
         <div>
             <div className="p-5 sm:p-10">
@@ -20,6 +25,11 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div>
+                <h1 className="text-center font-semibold text-3xl">Books: {info.length}</h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">{info.map(aInfo => <Bookcard aInfo={aInfo}></Bookcard>)}</div>
+
             </div>
         </div>
     );

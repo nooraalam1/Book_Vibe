@@ -9,6 +9,7 @@ import Maindiv from './Components/Maindiv';
 import Home from './Components/Home';
 import Listedbooks from './Components/Listedbooks';
 import Pagestoread from './Components/Pagestoread';
+import Bookdetails from './Components/Bookdetails';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
     children: [{
       path: "/",
       element: <Home></Home>,
+      loader: () => fetch("../public/data.json")
     },
     {
       path: '/listedbooks',
@@ -24,6 +26,11 @@ const router = createBrowserRouter([
     {
       path: '/pagestoread',
       element: <Pagestoread></Pagestoread>,
+    },
+    {
+      path: '/bookdetails/:id',
+      element: <Bookdetails></Bookdetails>,
+      loader: () => fetch('../public/data.json').then(res => res.json())
     }
     ]
   },

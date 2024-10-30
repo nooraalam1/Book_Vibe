@@ -1,0 +1,81 @@
+[
+    {
+      "bookId": 1,
+      "bookName": "The Silent Patient",
+      "author": "Alex Michaelides",
+      "image": "../imgs/b8.jpg",
+      "review": "A gripping psychological thriller with unexpected twists.",
+      "totalPages": 336,
+      "rating": 4.5,
+      "category": "Fiction",
+      "tags": ["Suspense", "Psychological", "Thriller"],
+      "publisher": "Celadon Books",
+      "yearOfPublishing": 2019
+    },
+    {
+      "bookId": 2,
+      "bookName": "Educated",
+      "author": "Tara Westover",
+      "image": "../imgs/b2.jpg",
+      "review": "A powerful memoir of resilience and the quest for knowledge.",
+      "totalPages": 352,
+      "rating": 4.7,
+      "category": "Biography",
+      "tags": ["Memoir", "Inspirational"],
+      "publisher": "Random House",
+      "yearOfPublishing": 2018
+    },
+    {
+      "bookId": 3,
+      "bookName": "The Midnight Library",
+      "author": "Matt Haig",
+      "image": "../imgs/b3.jpg",
+      "review": "A thought-provoking story about life choices and second chances.",
+      "totalPages": 304,
+      "rating": 4.3,
+      "category": "Fiction",
+      "tags": ["Philosophical", "Fantasy"],
+      "publisher": "Canongate Books",
+      "yearOfPublishing": 2020
+    },
+    {
+      "bookId": 4,
+      "bookName": "Becoming",
+      "author": "Michelle Obama",
+      "image": "../imgs/b4.jpg",
+      "review": "A deeply personal and inspiring story of a former First Lady.",
+      "totalPages": 448,
+      "rating": 4.8,
+      "category": "Autobiography",
+      "tags": ["Inspirational", "Political"],
+      "publisher": "Crown Publishing Group",
+      "yearOfPublishing": 2018
+    },
+    {
+      "bookId": 5,
+      "bookName": "Atomic Habits",
+      "author": "James Clear",
+      "image": "../imgs/b5.jpg",
+      "review": "A practical guide to building good habits and breaking bad ones.",
+      "totalPages": 320,
+      "rating": 4.9,
+      "category": "Self-help",
+      "tags": ["Motivational", "Productivity"],
+      "publisher": "Avery",
+      "yearOfPublishing": 2018
+    },
+    {
+      "bookId": 6,
+      "bookName": "Dune",
+      "author": "Frank Herbert",
+      "image": "../imgs/b6.jpg",
+      "review": "A timeless science fiction classic with an intricate world and deep themes.",
+      "totalPages": 688,
+      "rating": 4.6,
+      "category": "Science Fiction",
+      "tags": ["Adventure", "Political", "Space"],
+      "publisher": "Chilton Books",
+      "yearOfPublishing": 1965
+    }
+  ]
+  
