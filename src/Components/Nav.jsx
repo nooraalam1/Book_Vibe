@@ -1,6 +1,19 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "./AuthProvider";
+import { signOut } from "firebase/auth";
 
 const Nav = () => {
+    const { users, logOut } = useContext(AuthContext)
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                alert("Logout SuccessFull")
+            }).catch((error) => {
+                // An error happened.
+            });
+    }
+
     return (
         <div className="p-4">
             {/* Container for "Book Vibe" and other items */}
@@ -40,8 +53,18 @@ const Nav = () => {
 
                     {/* Sign Up and Sign In Buttons */}
                     <div className="flex gap-4">
-                        <button className="btn btn-secondary">Sign Up</button>
-                        <button className="btn btn-accent">Sign In</button>
+                        {
+                            users ? <span>
+                                {
+                                    users.email
+                                }
+                                <button onClick={handleLogout} className="btn btn-accent">Logout</button>
+                            </span> : <span>
+                                <NavLink to='signup' ><button className="btn btn-secondary">Register</button>
+                                </NavLink>
+                                <NavLink to='signin' ><button className="btn btn-accent">LogIn</button></NavLink>
+                            </span>
+                        }
                     </div>
                 </div>
             </div>

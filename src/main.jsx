@@ -10,6 +10,10 @@ import Home from './Components/Home';
 import Listedbooks from './Components/Listedbooks';
 import Pagestoread from './Components/Pagestoread';
 import Bookdetails from './Components/Bookdetails';
+import Signup from './Components/Signup';
+import Signin from './Components/Signin';
+import AuthProvider from './Components/AuthProvider';
+import PrivateRoute from '../PrivateRoute';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -21,16 +25,25 @@ const router = createBrowserRouter([
     },
     {
       path: '/listedbooks',
-      element: <Listedbooks></Listedbooks>,
+      element: <PrivateRoute><Listedbooks></Listedbooks></PrivateRoute>,
     },
     {
       path: '/pagestoread',
-      element: <Pagestoread></Pagestoread>,
+      element: <PrivateRoute><Pagestoread></Pagestoread></PrivateRoute>,
     },
     {
       path: '/bookdetails/:id',
       element: <Bookdetails></Bookdetails>,
       loader: () => fetch('../public/data.json').then(res => res.json())
+    },
+    {
+      path: '/signup',
+      element: <Signup></Signup>
+    },
+    {
+      path: '/signin',
+      element: <Signin></Signin>
+
     }
     ]
   },
@@ -38,6 +51,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )
