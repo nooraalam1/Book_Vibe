@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import { AuthContext } from './AuthProvider';
 import { NavLink } from 'react-router-dom';
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import app from './firebase.config';
 
 const Signup = () => {
     const { createUser } = useContext(AuthContext)
@@ -22,6 +24,22 @@ const Signup = () => {
             });
 
     }
+
+    const provider = new GoogleAuthProvider()
+    const auth = getAuth(app);
+    const handleGoogle = () => {
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                const user = result.user
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+
+    }
+
+
+
     return (
         <div className=''>
             <div className="">
@@ -48,6 +66,9 @@ const Signup = () => {
                 <button type='submit' className="btn btn-accent">Submit</button>
             </form>
             <div className="">
+                <div className="">
+                    <button onClick={handleGoogle} className="btn btn-accent">Continue With Google</button>
+                </div>
                 <h1 className="">
                     <NavLink to='/signin'><button className=''>Already Have an Account?</button></NavLink>
                 </h1>
